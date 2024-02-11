@@ -35,14 +35,14 @@ docker run --name dbmysql --network net-lara-mysql \
 
 4. No contêiner que será criado, iremos mapear o volume da aplicação para dentro do contêiner, permitindo a alteração do código enquanto o contêiner está em execução. No entanto, isso pode ocasionar um problema quando o contêiner precisar modificar as informações de cache nos diretórios 'storage' e 'bootstrap'. Isso ocorrerá porque o contêiner tentará manipular os diretórios com o usuário 'www-data', enquanto em nossa máquina apenas nosso usuário terá permissão para alterá-los. Para resolver esse problema, existem possíveis soluções:
 
-  1. Transferir o controle desses diretórios para o usuário 'www-data':
+  - Transferir o controle desses diretórios para o usuário 'www-data':
 
   ```
     sudo chown -R www-data:www-data storage
     sudo chown -R www-data:www-data bootstrap
   ```
 
-  2. Atribuir permissões para que todos os usuários possam ler, escrever e executar neste diretório (embora não recomendado). Em um ambiente local de desenvolvimento, isso não causará problemas.
+  - Atribuir permissões para que todos os usuários possam ler, escrever e executar neste diretório (embora não recomendado). Em um ambiente local de desenvolvimento, isso não causará problemas.
 
   ```
     sudo chmod -R 777 /var/www/storage /var/www/bootstrap
