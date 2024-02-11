@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+    volumes:
+      - ".:/var/www"
+    ports:
+      - "8080:80"
+    #network_mode: host #ao usar a rede da maquina host, nao ha necessidade de mapear as portas
+  mysql:
+    container_name: mysqldb
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: appdados
+      MYSQL_USER: appdados
+      MYSQL_PASSWORD: 12345678
+    ports:
+      - "3307:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+  
+volumes:
+  db-data:
