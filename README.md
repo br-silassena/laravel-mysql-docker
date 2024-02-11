@@ -79,7 +79,7 @@ Para garantair que o contêiner se conectou ao banco, vamos executar a migrate d
 
 Se tudo ocorreu bem, no terminal serão apresentadas as tabelas criadas pela aplicação.
 
-### Com DockerFile
+### Com Docker Composer
 
 O arquivo Docker Compose presente no diretório já mapeia os diretórios da aplicação, além de configurar um volume gerenciado pelo Docker e colocar os contêineres na mesma rede. Portanto, a única ação necessária é executar os comandos na raiz do projeto que criam as imagens locais e os contêineres."
 
