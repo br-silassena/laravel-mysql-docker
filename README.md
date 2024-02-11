@@ -71,6 +71,12 @@ docker build -t image-laravel .
 docker run -p 8080:80 -v $(pwd):/var/www  --network net-lara-mysql --name applaravel image-laravel
 ```
 
+Neste ponto, a aplicação já pode ser acessada no navegador através da porta 8080. Para que a aplicação funcione, será necessário instalar as dependências do Laravel usando o comando:
+
+```
+  docker exec applaravel composer install
+```
+
 Para garantair que o contêiner se conectou ao banco, vamos executar a migrate de criação de usuário do laravel:
 
 ```
