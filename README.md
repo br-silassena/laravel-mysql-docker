@@ -94,4 +94,18 @@ docker compose up -d
 ```
 
 Em ambos os exemplos, o banco de dados pode ser acessado por um Sistema de Gerenciamento de Banco de Dados (SGBD) através da porta mapeada para a rede externa 3307.
-  
+
+### Importante
+
+- executar o composer install/update instalar as dependencias 
+  ```
+  docker exec applaravel composer update
+  ```
+
+- Renomear o arquivo .env.example para .env 
+
+- gerar uma key da aplicacao 
+
+  ```
+  docker exec applaravel php artisan key:generate
+  ```
